@@ -51,7 +51,7 @@ public class RomanNumeral implements RomanNumeralGenerator {
         new RomanSymbol( 40, "XL" ),
         new RomanSymbol( 10, "X" ),
         new RomanSymbol( 9, "IX" ),
-        new RomanSymbol( 5, "5" ),
+        new RomanSymbol( 5, "V" ),
         new RomanSymbol( 4, "IV" ),
         new RomanSymbol( 1, "I" )
     };
