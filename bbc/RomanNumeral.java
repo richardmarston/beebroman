@@ -21,13 +21,13 @@ public class RomanNumeral implements RomanNumeralGenerator {
         };
     };
 
-    /* These are the variables that will are used to represent the
+    /* These are the variables that are used to represent the
        current string, how much it is worth and how much it needs
        to be worth eventually.
     */
+    private String output;
     private int currentValue;
     private int targetValue;
-    private String output;
 
     /* Constructor - make everything new.
     */
