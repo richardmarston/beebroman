@@ -78,6 +78,9 @@ public class RomanNumeral implements RomanNumeralGenerator {
        return of false.
     */
     public String generate(int target) {
+        if (target < 1 || target > 3999) {
+            return "Invalid input";
+        }
         targetValue = target; 
         while (addSymbol() == true) {
             /* enable for debugging 
