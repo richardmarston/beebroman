@@ -9,13 +9,17 @@ public class RomanNumeral implements RomanNumeralGenerator {
        that each one represents.
     */
     private class RomanSymbol {
+
         int value;
         String symbol;
+
         public RomanSymbol () {
             value = 0;
             symbol = "";
         };
+
         public RomanSymbol (int i, String s) {
+
             value = i;
             symbol = s;
         };
@@ -32,6 +36,7 @@ public class RomanNumeral implements RomanNumeralGenerator {
     /* Constructor - make everything new.
     */
     public RomanNumeral () {
+
         currentValue = 0;
         targetValue = 0;
         output = new String();
@@ -41,6 +46,7 @@ public class RomanNumeral implements RomanNumeralGenerator {
        to use and their associated values
     */
     private RomanSymbol possibleLetters[] = {
+
         new RomanSymbol( 1000, "M" ),
         new RomanSymbol( 900, "CM" ),
         new RomanSymbol( 500, "D" ),
@@ -61,15 +67,17 @@ public class RomanNumeral implements RomanNumeralGenerator {
        to indicate that the output is ready.
     */
     private boolean addSymbol() {
-        for (int i = 0; i < possibleLetters.length; i++)
-        {
-            if (currentValue + possibleLetters[i].value <= targetValue)
-            {
+
+        for (int i = 0; i < possibleLetters.length; i++) {
+
+            if (currentValue + possibleLetters[i].value <= targetValue) {
+
                 currentValue += possibleLetters[i].value;
                 output += possibleLetters[i].symbol;
                 return true;
             }
         }
+
         return false;
     }
 
@@ -78,11 +86,14 @@ public class RomanNumeral implements RomanNumeralGenerator {
        return of false.
     */
     public String generate(int target) {
-        if (target < 1 || target > 3999) {
+
+        if ((target < 1) || (target > 3999)) {
+
             return "Invalid input";
         }
         targetValue = target; 
         while (addSymbol() == true) {
+
             /* enable for debugging 
             System.out.println( "Current String is: "+output);
             System.out.println( "Current Value is: "+currentValue); 
@@ -93,25 +104,24 @@ public class RomanNumeral implements RomanNumeralGenerator {
 
     /* This is the function that I used to test the class.
     */
-    public static void main(String[] args)
-    {
-        if (args.length < 1)
-        {
+    public static void main(String[] args) {
+
+        if (args.length < 1) {
+
             System.out.println("Please indicate the number you wish to convert to Roman Numerals");
             System.exit(1);
         }
         int numberToConvert = 0;
-        try
-        {
+        try {
+
             numberToConvert = Integer.parseInt(args[0]);
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
+
             System.out.println("Please indicate the number you wish to convert as a decimal string e.g. 1649");
         }
-        if ((numberToConvert < 1) ||
-            (numberToConvert > 3999))
-        {
+        if ((numberToConvert < 1) || (numberToConvert > 3999)) {
+
             System.out.println("Please choose a number between 0 and 3999.");
             System.exit(2);
         }
